@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
+		<property name="connection.username">system</property>
+		<property name="connection.password">test123</property>
+
+		<property name="dialect">org.hibernate.dialect.OracleDialect</property>
+		<property name="show_sql">true</property>
+		<property name="hbm2ddl.auto">update</property>
+
+		<property name="hibernate.c3p0.min_size">5</property>
+		<property name="hibernate.c3p0.max_size">20</property>
+
+		<property name="cache.use_second_level_cache">true</property>
+		<property name="cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
+		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+		
+		<mapping class="nov20.com.rakshant.basics.Student" />
+		<mapping class="nov20.com.rakshant.HQL.Employee" />
+		<mapping class="nov20.com.rakshant.HQL.CacheTest" />
+		<mapping class="nov20.com.rakshant.onetoonemapping.Employees" />
+		<mapping class="nov20.com.rakshant.onetoonemapping.Profile" />
+		<mapping class="nov20.com.rakshant.onetomanymapping.Employees_2" />
+		<mapping class="nov20.com.rakshant.onetomanymapping.Department" />
+		<mapping class="nov20.com.rakshant.manytomanymapping.Employee_3" />
+		<mapping class="nov20.com.rakshant.manytomanymapping.Project" />
+			
+	</session-factory>
+</hibernate-configuration>
